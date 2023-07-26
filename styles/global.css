@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800;900&family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-primary: #ef4444;
+  --bg-color-primary: #ef4444;
+  --color-heading: #1f2937;
+  --color-text: #374151;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  /* max-width: 100vw;
+  overflow-x: hidden; */
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.174);
+  z-index: 1000 !important;
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #ef4444;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--bg-color-primary) !important;
+}
+
+
+/* Search Component */
+
+.search-comp {
+  width: 30rem;
+}
+
+@media (max-width: 985px) {
+  .search-comp {
+    width: 100%;
+  }
+}
+
+
+
+
+.color-primary {
+  color: var(--color-primary)
+}
+
+.color-heading {
+  color: var(--color-heading);
+}
+
+.color-text {
+  color: var(--color-text);
+}
+
+.bg-color-primary {
+  background-color: var(--bg-color-primary) !important;
+}
