@@ -25,7 +25,7 @@ const Cars = ({ data }) => {
       <p className="mt-2 mb-1 fs-6 fw-bold">{data.name}</p>
       <p className="m-0 small text-capitalize">{data.transmisson_type}</p>
       <p className="m-0 small">Rs. {data.exshowroom_price} Lakhs</p>
-      <Button className="small text-black border-danger bg-light mt-2 w-100 tex-center">
+      <Button className="detail-btn small text-black border-danger bg-light mt-2 w-100 tex-center">
         View Details
       </Button>
     </div>

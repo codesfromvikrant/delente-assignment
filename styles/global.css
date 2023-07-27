@@ -96,3 +96,11 @@ a {
 .bg-color-primary {
   background-color: var(--bg-color-primary) !important;
 }
+
+/* Hover effect on buttons */
+.detail-btn:hover {
+  background-color: var(--bg-color-primary) !important;
+  color: white !important;
+  border: none !important;
+  transition: all 0.4s ease-in-out;
+}

@@ -36,7 +36,7 @@ const RelatedProducts = () => {
         <p className="mt-2 mb-1 fs-6 fw-bold">{product.name}</p>
         <p className="m-0 small">Rs. {product.exshowroom_price} Lakhs</p>
         <p className="m-0 small text-capitalize">{product.transmisson_type}</p>
-        <Button className="small text-black border-danger bg-light mt-2 w-100 tex-center">
+        <Button className="detail-btn small text-black border-danger bg-light mt-2 w-100 tex-center">
           View Details
         </Button>
       </Col>
