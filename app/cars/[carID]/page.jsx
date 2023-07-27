@@ -79,12 +79,19 @@ const CarPage = ({ params }) => {
                 </tr>
                 <tr>
                   <th scope="row">Transmission Type</th>
-                  <td>{cardata?.transmisson_type}</td>
+                  <td className="text-capitalize">
+                    {cardata?.transmisson_type}
+                  </td>
                 </tr>
 
                 <tr>
                   <th scope="row">Fuel Type</th>
-                  <td>{cardata?.fuel}</td>
+                  <td className="text-capitalize">{cardata?.fuel}</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Safety</th>
+                  <td>{cardata?.safety_rating}</td>
                 </tr>
               </tbody>
             </Table>
