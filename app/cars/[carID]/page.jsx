@@ -3,16 +3,24 @@ import React, { useState, useEffect, useContext } from "react";
 import RelatedProducts from "@/components/RelatedProducts";
 import { BiSolidOffer } from "react-icons/bi";
 import { Container, Row, Col, Button, Table } from "react-bootstrap";
-import { Context } from "@/app/context";
+import axios from "axios";
 
 const CarPage = ({ params }) => {
-  const { productCars } = useContext(Context);
   const [cardata, setCardata] = useState(null);
 
+  const api = "https://64c036e40d8e251fd11201bc.mockapi.io/api/v1/";
   useEffect(() => {
-    const data = productCars?.find((data) => data.imageID === params.carID);
-    data && setCardata(data);
-  }, [productCars, params.carID]);
+    (async function () {
+      // fetching data from mockapi
+      const res = await axios.get(`${api}cars`);
+      const data = res.data;
+      setCardata(data?.find((data) => data.imageID === params.carID));
+      try {
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [params.carID]);
 
   const style = {
     // fething image from cloudinary storage
