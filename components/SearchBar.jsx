@@ -4,11 +4,15 @@ import Form from "react-bootstrap/Form";
 import SearchDialogs from "./SearchDialogs";
 
 const SearchBar = () => {
+  // State to track the search query and whether to display the search results dropdown
   const [search, setSearch] = useState("");
   const [displaydialog, setDisplayDialog] = useState(false);
+
+  // Refs to handle click events outside the search dialog and the form
   const dialogRef = useRef(null);
   const formRef = useRef(null);
 
+  // Effect to handle click events outside the search dialog
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -25,6 +29,7 @@ const SearchBar = () => {
     };
   }, []);
 
+  // Render the search input and the search results dialog
   return (
     <div className="position-relative search-comp">
       <Form className="w-100">
@@ -33,6 +38,7 @@ const SearchBar = () => {
           type="text"
           value={search}
           onChange={(e) => {
+            // Show the search dialog and update the search query
             setDisplayDialog(true);
             setSearch(e.target.value);
           }}

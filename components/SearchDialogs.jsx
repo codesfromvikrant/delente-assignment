@@ -4,13 +4,16 @@ import { useRouter } from "next/navigation";
 import { Context } from "@/app/context";
 
 const SearchDialogs = ({ search }) => {
+  // Access the productCars data from the Context
   const { productCars } = useContext(Context);
   const router = useRouter();
 
+  // Filter productCars based on the search query and map them to Col components
   const searchDialogsList = productCars
     ?.filter((data) => data.name.includes(search))
     .map((data) => {
       return (
+        // Each Col component represents a search result item
         <Col
           onClick={() => router.push(`/cars/${data.imageID}`)}
           key={data.id}
@@ -29,6 +32,7 @@ const SearchDialogs = ({ search }) => {
       );
     });
 
+  // Render the searchDialogsList in a Row container
   return (
     <Row
       style={{

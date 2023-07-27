@@ -1,5 +1,4 @@
 import "@/styles/global.css";
-import "@/styles/custom.module.css";
 import { Inter } from "next/font/google";
 import NavbarHeader from "@/components/NavHeader";
 import Footer from "@/components/Footer";

@@ -19,8 +19,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const PopularCars = () => {
+  // Access the productCars data from the Context
   const { productCars } = useContext(Context);
 
+  // Function to render SwiperSlides for each car
   const renderCarSlides = () =>
     productCars?.map((data) => (
       <SwiperSlide key={data.id}>
@@ -28,6 +30,7 @@ const PopularCars = () => {
       </SwiperSlide>
     ));
 
+  // Render the PopularCars component
   return (
     <Container id="popular-cars" className="my-5 pt-3">
       <h2 className="fw-bold color-heading text-center">Popular Cars</h2>

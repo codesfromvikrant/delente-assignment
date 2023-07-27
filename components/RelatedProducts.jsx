@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import { useRouter } from "next/navigation";
 import { Row, Col, Button } from "react-bootstrap";
 import { Context } from "@/app/context";
-import Link from "next/link";
 
 const RelatedProducts = () => {
+  // Access the productCars data from the Context
   const { productCars } = useContext(Context);
   const router = useRouter();
 
+  // Map productCars to Col components representing each related product
   const productList = productCars?.map((product) => {
+    // Define the background image style for each product
     const style = {
       background: `url(https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${product.imageID}.jpg)`,
       backgroundSize: "cover",
@@ -41,6 +43,7 @@ const RelatedProducts = () => {
     );
   });
 
+  // Render the list of related products
   return (
     <div className="mt-5">
       {" "}

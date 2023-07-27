@@ -2,17 +2,12 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/custom.module.css";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { Button } from "react-bootstrap";
-const cld = new Cloudinary({
-  cloud: {
-    cloudName: "dvmhiqz6e",
-  },
-});
 
 const Cars = ({ data }) => {
   const router = useRouter();
   const style = {
+    // fetching images from cloudinary storage
     background: `url(https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${data.imageID}.jpg)`,
     backgroundSize: "cover",
     backgroundPosition: "center",

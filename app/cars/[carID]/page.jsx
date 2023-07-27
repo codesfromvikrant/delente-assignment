@@ -15,6 +15,7 @@ const CarPage = ({ params }) => {
   }, [productCars, params.carID]);
 
   const style = {
+    // fething image from cloudinary storage
     background: `url(https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${params.carID}.jpg)`,
     backgroundSize: "cover",
     backgroundPosition: "center",

@@ -1,5 +1,4 @@
 "use client";
-import styles from "./page.module.css";
 import Banners from "@/components/Banners";
 import PopularCars from "@/components/PopularCars";
 import { ContextProvider } from "./context";
