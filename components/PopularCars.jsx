@@ -36,13 +36,12 @@ const PopularCars = () => {
       <h2 className="fw-bold color-heading text-center">Popular Cars</h2>
       <Swiper
         className="pb-5 px-sm-5"
-        spaceBetween={30}
+        spaceBetween={20}
         modules={[Navigation, Pagination, EffectFade, Autoplay, A11y]}
         navigation
         breakpoints={{
           576: {
             slidesPerView: 1,
-            spaceBetween: 20,
           },
           768: {
             slidesPerView: 2,

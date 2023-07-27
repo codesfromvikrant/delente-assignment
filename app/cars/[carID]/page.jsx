@@ -23,13 +23,10 @@ const CarPage = ({ params }) => {
   }, [params.carID]);
 
   const style = {
-    // fething image from cloudinary storage
-    background: `url(https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${params.carID}.jpg)`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
     width: "100%",
     height: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
   };
 
   return (
@@ -48,7 +45,14 @@ const CarPage = ({ params }) => {
 
         <Row className="mt-3 bg-white ">
           <Col lg={6} md={12}>
-            <div style={style} className=""></div>
+            <div style={{ width: "100%", height: "100%" }} className="">
+              <img
+                src={`https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${params.carID}.jpg`}
+                alt={`${cardata?.name} image`}
+                loading="lazy"
+                style={style}
+              />
+            </div>
           </Col>
           <Col>
             <h5 className="fw-bolder color-text">

@@ -10,7 +10,7 @@ const SearchDialogs = ({ search }) => {
 
   // Filter productCars based on the search query and map them to Col components
   const searchDialogsList = productCars
-    ?.filter((data) => data.name.includes(search))
+    ?.filter((data) => data.name.toLowerCase().includes(search.toLowerCase()))
     .map((data) => {
       return (
         // Each Col component represents a search result item
@@ -23,10 +23,10 @@ const SearchDialogs = ({ search }) => {
           <div className=" d-flex justify-content-between align-items-center">
             <div className="">
               <p className="m-0 fw-bold">{data.name}</p>
-              <p className="m-0">Rs. {data.exshowroom_price} Lakhs</p>
+              <p className="m-0 text-capitalize">{data.transmisson_type}</p>
             </div>
 
-            <p>Rs. {data.exshowroom_price} Lakhs</p>
+            <p className="color-text m-0">Rs. {data.exshowroom_price} Lakhs</p>
           </div>
         </Col>
       );

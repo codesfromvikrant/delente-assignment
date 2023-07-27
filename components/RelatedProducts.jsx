@@ -12,12 +12,10 @@ const RelatedProducts = () => {
   const productList = productCars?.map((product) => {
     // Define the background image style for each product
     const style = {
-      background: `url(https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${product.imageID}.jpg)`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
       width: "100%",
-      height: "15rem",
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "center",
     };
     return (
       <Col
@@ -30,9 +28,16 @@ const RelatedProducts = () => {
       >
         <div
           onClick={() => router.push(`/cars/${product.imageID}`)}
-          style={style}
+          style={{ width: "100%", height: "15rem" }}
           className="bg-light rounded-1"
-        ></div>
+        >
+          <img
+            src={`https://res.cloudinary.com/dvmhiqz6e/image/upload/v1628583889/${product.imageID}.jpg`}
+            alt={`${product.name} image`}
+            loading="lazy"
+            style={style}
+          />
+        </div>
         <p className="mt-2 mb-1 fs-6 fw-bold">{product.name}</p>
         <p className="m-0 small">Rs. {product.exshowroom_price} Lakhs</p>
         <p className="m-0 small text-capitalize">{product.transmisson_type}</p>
